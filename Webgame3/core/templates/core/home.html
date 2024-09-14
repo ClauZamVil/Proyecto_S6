@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>Listado de Vehiculos</h1>
+    <div class="row">
+
+    <table border=1>
+        <tr>
+            <td>
+                Patente
+            </td>
+            <td>Marca</td>
+            <td>Modelo</td>
+            <td><a href="{%url 'form_mod_vehiculo' ve.patente%}">Modificar</a></td>
+            <td><a href="{%url 'form_del_vehiculo' ve.patente%}">Eliminar</a></td>
+          
+        </tr>
+        {%for ve in vehiculos%}  
+        <tr><td>{{ve.patente}}</td><td>{{ve.marca}}</td><td>{{ve.modelo}}</td></tr>
+        {%end for%}
+    </table>
+    <a href="{%url 'form_vehiculo'%}">Nuevo Vehiculo</a>
+    </div>
+</div>
