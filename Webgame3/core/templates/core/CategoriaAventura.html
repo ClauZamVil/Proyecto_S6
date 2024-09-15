@@ -78,7 +78,7 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-dark" style="width: 100%;">
-            <a class="navbar-brand" href=" {% url 'Principal'%}"><img class="logo mr-5" src="{% static 'core/img/Webgames.png'%}" href="{% url 'Principal' %}"></a>
+            <a class="navbar-brand" href=" {% url 'Index'%}"><img class="logo mr-5" src="{% static 'core/img/Webgames.png'%}" href=" {% url 'Index'%}"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -86,7 +86,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link active" style="color: white;" aria-current="page" href="{% url 'Principal'%}">Inicio</a>
+                    <a class="nav-link active" style="color: white;" aria-current="page" href=" {% url 'Index'%}">Inicio</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link active" style="color: white;" aria-current="page" href="{% url 'CategoriaAventura'%}">Aventura</a>
@@ -135,7 +135,7 @@
                     <img class="img-fluid" src="{% static 'core/ImagenesCategoria/Aventura.jpg'%}" width="1000px" alt="">
                 </div>
                 <div class="col-xs-12 col-md-12 text-center mt-5">
-                <button id="btn_cat"><a href="{% url 'CategoriaInfantiles'%}" style="color: rgb(38, 38, 38); background-color:#f0e447">Volver al inicio</a> </button>
+                <button id="btn_cat"><a href=" {% url 'Index'%}" style="color: rgb(38, 38, 38); background-color:#f0e447">Volver al inicio</a> </button>
                 </div>    
             </div>
         </div>
@@ -201,7 +201,7 @@
         
         <div class="row">
             <div>
-                <a href="{% url 'Principal'%}"><img class="logo img-fluid" src="{% static 'core/img/Webgames.png'%}" href="{% url 'index' %}"></a>
+                <a href=" {% url 'Index'%}"><img class="logo img-fluid" src="{% static 'core/img/Webgames.png'%}" href="{% url 'index' %}"></a>
             </div>
         Copyright © 2024  - All rights reserved 
         </div>

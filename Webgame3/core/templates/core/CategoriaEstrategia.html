@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <link type="text/css" rel="stylesheet" href="style_Principal.css">
+    <link type="text/css" rel="stylesheet" href="{% static 'core/style_Principal.css'%}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="cache-control" content="no-cache">
@@ -90,57 +90,48 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-dark" style="width: 100%;">
-            <a class="navbar-brand" href="Principal.html"><img class="logo mr-5" src="img/Webgames.png"
-                    href="Principal.html"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <a class="navbar-brand" href=" {% url 'Index'%}"><img class="logo mr-5" src="{% static 'core/img/Webgames.png'%}" href=" {% url 'Index'%}"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
             </button>
-
+          
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link active" style="color: white;" aria-current="page"
-                            href="Principal.html">Inicio</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link active" style="color: white;" aria-current="page"
-                            href="CategoriaAventura.html">Aventura</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" style="color: white;" href="CategoriaConduccion.html">Conducción</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" style="color: white;" href="categoriaDeportes.html">Deportes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" style="color: white;" href="CategoriaEstrategia.html">Estrategia</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" style="color: white;" href="CategoriaInfantiles.html">Infantiles</a>
-                    </li>
-                    <li class="nav-item">
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        </form>
-                    </li>
-
-                    <li class="dropdown ">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                            aria-expanded="false">Ingresar<span class="caret"></span></a>
-                        <ul class="dropdown-menu navbar-light bg-dark">
-                            <li class="nav-item menu2"><a class="nav-link" style="color: white;" href="#"
-                                    data-toggle="modal" data-target="#registerModal"><i class="fa fa-user-plus"
-                                        aria-hidden="true"></i> Registrarse</a></li>
-                            <li class="nav-item menu2"><a class="nav-link" style="color: white;" href="login.html"
-                                    id="loginBtn"><i class="fa fa-user" aria-hidden="true"></i> Iniciar Sesión</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" style="color: white;" href="/"><i
-                                class="fa fa-shopping-cart" aria-hidden="true"></i>Carro (1)</a></li>
-                </ul>
-
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link active" style="color: white;" aria-current="page" href=" {% url 'Index'%}">Inicio</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link active" style="color: white;" aria-current="page" href="{% url 'CategoriaAventura'%}">Aventura</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white;" href="{% url 'CategoriaConduccion'%}">Conducción</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white;" href="{% url 'categoriaDeportes'%}">Deportes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white;" href="{% url 'CategoriaEstrategia'%}">Estrategia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white;" href="{% url 'CategoriaInfantiles'%}">Infantiles</a>
+                </li>
+                <li class="nav-item">
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                </form>
+                </li>
+               
+                <li class="dropdown ">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ingresar<span class="caret"></span></a>
+                    <ul class="dropdown-menu navbar-light bg-dark">
+                      <li class="nav-item menu2"><a class="nav-link" style="color: white;" href="#" data-toggle="modal" data-target="#registerModal"><i class="fa fa-user-plus" aria-hidden="true"></i> Registrarse</a></li>
+                      <li class="nav-item menu2"><a class="nav-link" style="color: white;" href="{% url 'login'%}" id="loginBtn" ><i class="fa fa-user" aria-hidden="true"></i> Iniciar Sesión</a></li>
+                    </ul>
+                  </li>
+                <li class="nav-item"><a class="nav-link" style="color: white;" href="/"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Carro (1)</a></li>
+              </ul>
+              
             </div>
         </nav>
     </header>
@@ -157,11 +148,10 @@
 
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-6">
-                    <img class="img-fluid" src="ImagenesCategoria/Estrategia.jpg" width="1000px" alt="">
+                    <img class="img-fluid" src="{% static 'core/ImagenesCategoria/Estrategia.jpg' %}" width="1000px" alt="">
                 </div>
                 <div class="col-xs-12 col-md-12 text-center mt-5">
-                    <button id="btn_cat"><a href="Principal.html"
-                            style="color: rgb(38, 38, 38); background-color:#f0e447">Volver al inicio</a> </button>
+                    <button id="btn_cat"><a href="{% url 'Index'%}" style="color: rgb(38, 38, 38); background-color:#f0e447">Volver al inicio</a> </button>
                 </div>
             </div>
         </div>
@@ -170,7 +160,7 @@
     <br>
     <div class="container-fluid">
         <div class="row">
-            <img class="img-fluid" src="img/ps3.jpg" alt="">
+            <img class="img-fluid" src="{% static 'core/img/ps3.jpg' %}" alt="">
         </div>
     </div>
     <br>
@@ -179,36 +169,32 @@
     <div class="container-fluid mb-5">
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6 text-center">
-                <a href="Estrategia2.html">
-                    <img class="img-fluid" src="ImagenesCategoria/divinity.jpg" alt="">
+                <a href="{% url 'Estrategia2'%}">
+                    <img class="img-fluid" src="{% static 'core/ImagenesCategoria/divinity.jpg' %}" alt="">
                 </a>
                 <h5 class="mt-2" style="color: white;"> Esta nueva aventura será mucho más grande y ambiciosa que su
                     primera parte, aunque
                     las bases jugables se mantendrán intactas, permitiéndonos librar complejos combates
                     estratégicos por turnos en los que podremos interactuar con el entorno de muchas formas.
                 </h5>
-                <button id="btn_cat" style="background-color: #f0e447; width: 250px;"><a href="Estrategia2.html"
-                        style="color: rgb(38, 38, 38)">Ver más información</a></button>
+                <button id="btn_cat" style="background-color: #f0e447; width: 250px;"><a href="{% url 'Estrategia2'%}" style="color: rgb(38, 38, 38)">Ver más información</a></button>
 
             </div>
 
 
             <div class="col-xs-12 col-sm-6 col-md-6 text-center">
-                <a href="Estrategia1.html">
-                    <img src="ImagenesCategoria/XCOM2.jpg" alt="">
+                <a href="{% url 'Estrategia1'%}">
+                    <img src="{% static 'core/ImagenesCategoria/XCOM2.jpg' %}" alt="">
                 </a>
                 <h5 class="mt-2" style="color: white;">La secuela del aclamado XCOM: Enemy Unknown (2012), el regreso de
                     una veterana
                     saga de estrategia en la que tenemos que combatir contra una invasión alienígena,
                     teniendo que liderar a la resistencia que lucha contra los ocupantes extraterrestres.
                 </h5>
-                <button id="btn_cat" style="background-color: #f0e447; width: 250px;"><a href="Estrategia1.html"
-                        style="color: rgb(38, 38, 38)">Ver más información</a></button>
+                <button id="btn_cat" style="background-color: #f0e447; width: 250px;"><a href="{% url 'Estrategia1'%}" style="color: rgb(38, 38, 38)">Ver más información</a></button>
             </div>
         </div>
     </div>
-
-
     <footer>
         <div class="footer">
             <div class="row">
@@ -217,26 +203,25 @@
                 <a href="#"><i class="fa fa-youtube"></i></a>
                 <a href="#"><i class="fa fa-twitter"></i></a>
             </div>
-
+    
             <div class="row">
                 <ul>
-                    <li><a href="CategoriaAventura.html">Aventura</a></li>
-                    <li><a href="CategoriaConduccion.html">Conducción</a></li>
-                    <li><a href="categoriaDeportes.html">Deporte</a></li>
-                    <li><a href="CategoriaEstrategia.html">Estrategias</a></li>
-                    <li><a href="CategoriaInfantiles.html">Infantiles</a></li>
+                    <li><a href="{% url 'CategoriaAventura'%}">Aventura</a></li>
+                    <li><a href="{% url 'CategoriaConduccion'%}">Conducción</a></li>
+                    <li><a href="{% url 'categoriaDeportes'%}">Deporte</a></li>
+                    <li><a href="{% url 'CategoriaEstrategia'%}">Estrategias</a></li>
+                    <li><a href="{% url 'CategoriaInfantiles'%}">Infantiles</a></li>
                 </ul>
             </div>
-
+    
             <div class="row">
                 <div>
-                    <a href="Principal.html"><img class="logo" src="img/Webgames.png" href="/Index.html"></a>
+                    <a href="{% url 'Index' %}"><img class="logo" src="{% static 'core/img/Webgames.png' %}"
+                            href="{% url 'index' %}"></a>
                 </div>
                 Copyright © 2024 - All rights reserved
             </div>
-
         </div>
-
     </footer>
 
     <!-- Modal de Registro -->
@@ -297,7 +282,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     <!-- Incluir el archivo de validaciones -->
-    <script src="validations.js"></script>
+    <script src="{% static 'core/validations.js'%}"></script>
 
 </body>
 

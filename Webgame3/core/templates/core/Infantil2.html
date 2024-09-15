@@ -4,7 +4,7 @@
 <html lang="es">
 
 <head>
-    <link type="text/css" rel="stylesheet" href="style_Principal.css">
+    <link type="text/css" rel="stylesheet" href="{% static 'core/style_Principal.css'%}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="cache-control" content="no-cache">
@@ -175,8 +175,8 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-dark" style="width: 100%;">
-            <a class="navbar-brand" href="Principal.html"><img class="logo mr-5" src="img/Webgames.png"
-                    href="Principal.html"></a>
+            <a class="navbar-brand" href=" {% url 'Index'%}"><img class="logo mr-5"
+                    src="{% static 'core/img/Webgames.png'%}" href=" {% url 'Index'%}"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -186,24 +186,24 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
                         <a class="nav-link active" style="color: white;" aria-current="page"
-                            href="Principal.html">Inicio</a>
+                            href=" {% url 'Index'%}">Inicio</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link active" style="color: white;" aria-current="page"
-                            href="CategoriaAventura.html">Aventura</a>
+                            href="{% url 'CategoriaAventura'%}">Aventura</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color: white;" href="CategoriaConduccion.html">Conducción</a>
+                        <a class="nav-link" style="color: white;" href="{% url 'CategoriaConduccion'%}">Conducción</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" style="color: white;" href="categoriaDeportes.html">Deportes</a>
+                        <a class="nav-link" style="color: white;" href="{% url 'categoriaDeportes'%}">Deportes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color: white;" href="CategoriaEstrategia.html">Estrategia</a>
+                        <a class="nav-link" style="color: white;" href="{% url 'CategoriaEstrategia'%}">Estrategia</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color: white;" href="CategoriaInfantiles.html">Infantiles</a>
+                        <a class="nav-link" style="color: white;" href="{% url 'CategoriaInfantiles'%}">Infantiles</a>
                     </li>
                     <li class="nav-item">
                         <form class="d-flex" role="search">
@@ -218,7 +218,7 @@
                             <li class="nav-item menu2"><a class="nav-link" style="color: white;" href="#"
                                     data-toggle="modal" data-target="#registerModal"><i class="fa fa-user-plus"
                                         aria-hidden="true"></i> Registrarse</a></li>
-                            <li class="nav-item menu2"><a class="nav-link" style="color: white;" href="login.html"
+                            <li class="nav-item menu2"><a class="nav-link" style="color: white;" href="{% url 'login'%}"
                                     id="loginBtn"><i class="fa fa-user" aria-hidden="true"></i> Iniciar Sesión</a></li>
                         </ul>
                     </li>
@@ -242,8 +242,7 @@
             <br>
             <div class="col-1"></div>
             <div id="card1" class="col-10 card border-warning ">
-                <img id="imgCard" class="card-img-top" src="ImagenesCategoria/Minecraft.jpg"
-                    alt="Imagen del Producto Infantil 2">
+                <img id="imgCard" class="card-img-top" src="{% static 'core/ImagenesCategoria/Minecraft.jpg' %}" alt="Imagen del Producto Infantil 2">
                 <div class="card-body">
                     <h2 class="card-title" style="color: black;">Minecraft</h2>
                     <p class="card-text" style="color: black;">
@@ -284,7 +283,7 @@
     </div>
 
     <footer>
-        <div class="footer bg-dark">
+        <div class="footer">
             <div class="row">
                 <a href="#"><i class="fa fa-facebook"></i></a>
                 <a href="#"><i class="fa fa-instagram"></i></a>
@@ -294,19 +293,20 @@
 
             <div class="row">
                 <ul>
-                    <li><a href="CategoriaAventura.html">Aventura</a></li>
-                    <li><a href="CategoriaConduccion.html">Conducción</a></li>
-                    <li><a href="categoriaDeportes.html">Deporte</a></li>
-                    <li><a href="CategoriaEstrategia.html">Estrategias</a></li>
-                    <li><a href="CategoriaInfantiles.html">Infantiles</a></li>
+                    <li><a href="{% url 'CategoriaAventura'%}">Aventura</a></li>
+                    <li><a href="{% url 'CategoriaConduccion'%}">Conducción</a></li>
+                    <li><a href="{% url 'categoriaDeportes'%}">Deporte</a></li>
+                    <li><a href="{% url 'CategoriaEstrategia'%}">Estrategias</a></li>
+                    <li><a href="{% url 'CategoriaInfantiles'%}">Infantiles</a></li>
                 </ul>
             </div>
 
             <div class="row">
                 <div>
-                    <a href="Principal.html"><img class="logo" src="img/Webgames.png" href="/Index.html"></a>
+                    <a href="{% url 'Index' %}"><img class="logo" src="{% static 'core/img/Webgames.png' %}"
+                            href="{% url 'index' %}"></a>
                 </div>
-                <p>Copyright © 2024 - All rights reserved</p>
+                Copyright © 2024 - All rights reserved
             </div>
         </div>
     </footer>
@@ -369,7 +369,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     <!-- Incluir el archivo de validaciones -->
-    <script src="validations.js"></script>
+    <script src="{% static 'core/validations.js'%}"></script>
 
 </body>
 
